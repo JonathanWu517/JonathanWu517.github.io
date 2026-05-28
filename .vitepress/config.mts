@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  title: 'Your Name',
+  title: 'JonathanWu517',
   description: 'Personal website, portfolio, projects, and notes.',
   srcDir: 'src',
   base: '/',
@@ -11,13 +11,13 @@ export default defineConfig({
 
   head: [
     ['meta', { name: 'theme-color', content: '#f7f2e8' }],
-    ['meta', { property: 'og:title', content: 'Your Name Personal Website' }],
+    ['meta', { property: 'og:title', content: 'JonathanWu517 Personal Website' }],
     ['meta', { property: 'og:description', content: 'Portfolio, projects, notes, and personal profile.' }]
   ],
 
   themeConfig: {
     logo: '',
-    siteTitle: 'Your Name',
+    siteTitle: 'JonathanWu517',
 
     nav: [
       { text: 'Home', link: '/' },
@@ -45,7 +45,7 @@ export default defineConfig({
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/YOUR_GITHUB_USERNAME' },
+      { icon: 'github', link: 'https://github.com/JonathanWu517' },
       { icon: 'linkedin', link: 'https://www.linkedin.com/' }
     ],
 
@@ -59,7 +59,7 @@ export default defineConfig({
 
     footer: {
       message: 'Built with VitePress and GitHub Pages.',
-      copyright: '© 2026 Your Name'
+      copyright: '© 2026 JonathanWu517'
     }
   }
 })

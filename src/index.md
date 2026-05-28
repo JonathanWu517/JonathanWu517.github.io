@@ -18,7 +18,7 @@ hero:
       link: "/projects/"
     - theme: alt
       text: "GitHub"
-      link: "https://github.com/YOUR_GITHUB_USERNAME"
+      link: "https://github.com/JonathanWu517"
 stats:
   - value: "01"
     label: "Focus"
@@ -59,7 +59,7 @@ features:
     title: "External Link"
     details: "Link to GitHub, LinkedIn, demos, videos, or another portfolio page."
     meta: "External"
-    link: "https://github.com/YOUR_GITHUB_USERNAME"
+    link: "https://github.com/JonathanWu517"
 ---
 
 <CustomHome />

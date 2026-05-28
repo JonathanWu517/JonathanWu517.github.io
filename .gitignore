@@ -1,5 +1,7 @@
-node_modules
-.vitepress/cache
-.vitepress/dist
+node_modules/
+.vitepress/cache/
+.vitepress/dist/
+dist/
 .DS_Store
 .env
+.env.*

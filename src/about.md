@@ -23,7 +23,7 @@ editLink: false
 
   <div class="info-item">
     <h3>Contact</h3>
-    <p>GitHub: <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" rel="noreferrer">YOUR_GITHUB_USERNAME</a></p>
+    <p>GitHub: <a href="https://github.com/JonathanWu517" target="_blank" rel="noreferrer">YOUR_GITHUB_USERNAME</a></p>
     <p>Email: your-email@example.com</p>
   </div>
 </div>
