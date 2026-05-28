@@ -1,37 +1,38 @@
-# JonathanWu517.github.io
+# Personal Website Starter
 
-A VitePress personal website for GitHub Pages.
+This is a VitePress personal website prepared for GitHub Pages.
 
-## 本地运行
+## Local development
 
 ```bash
 npm install
 npm run dev
 ```
 
-浏览器打开终端显示的地址，一般是 `http://localhost:5173`。
+Open the local URL shown in the terminal, usually `http://localhost:5173`.
 
-## 打包检查
+## Edit the site
+
+- `.vitepress/config.mts`: site title, navigation, sidebar, social links, search, footer.
+- `.vitepress/theme/style.css`: colors, typography, cards, homepage style.
+- `.vitepress/theme/components/CustomHome.vue`: homepage structure.
+- `src/index.md`: homepage placeholder text and feature cards.
+- `src/about.md`: about page.
+- `src/projects/index.md`: project list.
+- `src/posts/`: blog posts or notes.
+
+## Build check
 
 ```bash
 npm run build
 npm run preview
 ```
 
-## 上传到 GitHub
+## Publish with GitHub Pages
 
-```bash
-git add .
-git commit -m "Build my personal website"
-git push origin main
-```
-
-## GitHub Pages 设置
-
-进入仓库：
-
-`Settings → Pages → Build and deployment → Source → GitHub Actions`
-
-然后等待 Actions 跑完，访问：
-
-`https://JonathanWu517.github.io`
+1. Create a GitHub repository named `YOUR_GITHUB_USERNAME.github.io`.
+2. Upload or push these files to the `main` branch.
+3. Go to `Settings → Pages → Build and deployment`.
+4. Set `Source` to `GitHub Actions`.
+5. Push a commit and wait for the workflow to finish.
+6. Visit `https://YOUR_GITHUB_USERNAME.github.io`.

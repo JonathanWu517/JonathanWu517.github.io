@@ -1,8 +1,8 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  title: 'Jonathan Wu',
-  description: 'Personal portfolio, projects, notes, and blog.',
+  title: 'Your Name',
+  description: 'Personal website, portfolio, projects, and notes.',
   srcDir: 'src',
   base: '/',
   cleanUrls: true,
@@ -10,14 +10,14 @@ export default defineConfig({
   ignoreDeadLinks: true,
 
   head: [
-    ['meta', { name: 'theme-color', content: '#11131a' }],
-    ['meta', { property: 'og:title', content: 'Jonathan Wu Personal Website' }],
-    ['meta', { property: 'og:description', content: 'Projects, posts, and personal portfolio.' }]
+    ['meta', { name: 'theme-color', content: '#f7f2e8' }],
+    ['meta', { property: 'og:title', content: 'Your Name Personal Website' }],
+    ['meta', { property: 'og:description', content: 'Portfolio, projects, notes, and personal profile.' }]
   ],
 
   themeConfig: {
     logo: '',
-    siteTitle: 'Jonathan Wu',
+    siteTitle: 'Your Name',
 
     nav: [
       { text: 'Home', link: '/' },
@@ -26,8 +26,26 @@ export default defineConfig({
       { text: 'Posts', link: '/posts/' }
     ],
 
+    sidebar: {
+      '/': [
+        {
+          text: 'Introduction',
+          items: [
+            { text: 'About Me', link: '/about' }
+          ]
+        },
+        {
+          text: 'Work',
+          items: [
+            { text: 'Projects', link: '/projects/' },
+            { text: 'Posts', link: '/posts/' }
+          ]
+        }
+      ]
+    },
+
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/JonathanWu517' },
+      { icon: 'github', link: 'https://github.com/YOUR_GITHUB_USERNAME' },
       { icon: 'linkedin', link: 'https://www.linkedin.com/' }
     ],
 
@@ -35,9 +53,13 @@ export default defineConfig({
       provider: 'local'
     },
 
+    outline: {
+      level: [2, 3]
+    },
+
     footer: {
       message: 'Built with VitePress and GitHub Pages.',
-      copyright: '© 2026 Jonathan Wu'
+      copyright: '© 2026 Your Name'
     }
   }
 })

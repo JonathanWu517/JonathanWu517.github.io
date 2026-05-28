@@ -8,23 +8,23 @@ editLink: false
 
 # About Me
 
-<p class="lead">Hi, I am Jonathan Wu. This is my personal working website for projects, notes, and portfolio materials.</p>
+<p class="lead">Write a short introduction here. Keep it simple: who you are, what you are interested in, and what this website is for.</p>
 
 <div class="info-list">
   <div class="info-item">
-    <h3>What I am interested in</h3>
-    <p>Software development, robotics, AI tools, web design, and practical projects that solve real problems.</p>
+    <h3>Interests</h3>
+    <p>Replace this with your interests, academic direction, professional focus, or hobbies.</p>
   </div>
 
   <div class="info-item">
-    <h3>Skills to show here</h3>
-    <p>HTML, CSS, JavaScript, Python, GitHub, Markdown, VitePress, project documentation, and engineering design.</p>
+    <h3>Skills</h3>
+    <p>Replace this with your tools, programming languages, design skills, engineering skills, or research methods.</p>
   </div>
 
   <div class="info-item">
     <h3>Contact</h3>
-    <p>GitHub: <a href="https://github.com/JonathanWu517" target="_blank" rel="noreferrer">JonathanWu517</a></p>
-    <p>Email: replace-this-with-your-email@example.com</p>
+    <p>GitHub: <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" rel="noreferrer">YOUR_GITHUB_USERNAME</a></p>
+    <p>Email: your-email@example.com</p>
   </div>
 </div>
 

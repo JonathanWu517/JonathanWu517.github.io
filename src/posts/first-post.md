@@ -1,30 +1,13 @@
 ---
-title: My First Blog Post
+title: First Post Title
 date: 2026-05-28
 editLink: false
 ---
 
-# My First Blog Post
+# First Post Title
 
-This is a sample post. You can replace it with your own article.
+Replace this page with your own article, project note, learning note, or build log.
 
-## What can I write here?
+## Section Title
 
-You can write:
-
-- project notes
-- learning notes
-- robot build logs
-- programming tutorials
-- personal reflections
-- resume-style project summaries
-
-## How to add a new post
-
-Create a new Markdown file in `src/posts/`, for example:
-
-```text
-src/posts/my-new-post.md
-```
-
-Then add a link to it in `src/posts/index.md`.
+Write your content here in Markdown.
