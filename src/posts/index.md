@@ -1,20 +1,15 @@
 ---
-title: Posts
+title: Blog
 aside: false
 editLink: false
 ---
 
 <div class="simple-page">
 
-# Posts
+# Blog
 
-<p class="lead">Write posts in Markdown. After you push to GitHub, GitHub Actions will rebuild the website automatically.</p>
+<p class="lead">My learning notes, technical write-ups, and thoughts. Create a new <code>.md</code> file in <code>src/en/posts/</code> to add a post.</p>
 
-<div class="post-list">
-  <a class="post-link" href="/posts/first-post">
-    <strong>First Post Title</strong>
-    <span>Replace this with a short description of the post.</span>
-  </a>
-</div>
+<BlogList />
 
 </div>
