@@ -6,8 +6,6 @@ editLink: false
 
 <div class="simple-page">
 
-# Papers & Publications
-
 <PaperList />
 
 </div>

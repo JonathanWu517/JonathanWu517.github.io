@@ -3,17 +3,11 @@ title: Home
 aside: false
 editLink: false
 hero:
-  avatar: /avatar.svg
+  avatar: /证件照头像.jpg
   name: "Jonathan Wu"
-  title: "Student · Robotics Enthusiast"
+  title: "wuyh@stu.just.edu.cn"
   bio: "Passionate about robotics, building things that move, and exploring the intersection of hardware and software."
 social:
-  - text: "GitHub"
-    url: "https://github.com/JonathanWu517"
-  - text: "LinkedIn"
-    url: "https://www.linkedin.com/"
-  - text: "Email"
-    url: "mailto:your-email@example.com"
 aboutSection:
   title: "About Me"
   description: "Learn more about my background, research interests, honors, and publications."
@@ -24,8 +18,10 @@ stats:
     label: "Blog Posts"
   - value: "0"
     label: "Projects"
-  - value: "0"
+  - value: "1"
     label: "Papers"
+  - value: "7"
+    label: "Honors"
 projectsSection:
   title: "Projects"
   subtitle: "A collection of my work and experiments."
@@ -44,7 +40,7 @@ projects:
     link: "/posts/"
   - iconText: "◇"
     title: "Papers"
-    description: "Research publications, preprints, and technical reports."
+    description: "Multi-agent deep reinforcement learning, drone network routing optimization."
     link: "/papers/"
   - iconText: "◎"
     title: "Honors"

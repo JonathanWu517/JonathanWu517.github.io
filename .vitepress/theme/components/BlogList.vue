@@ -23,20 +23,10 @@ const posts = computed<Post[]>(() => {
     description: (isEn && p.descriptionEn) ? p.descriptionEn : p.description
   }))
 })
-
-const allTags = computed(() => {
-  const set = new Set<string>()
-  posts.value.forEach(p => p.tags.forEach((t: string) => set.add(t)))
-  return Array.from(set).sort()
-})
 </script>
 
 <template>
   <div class="blog-list">
-    <div v-if="allTags.length > 0" class="tag-filter">
-      <span v-for="tag in allTags" :key="tag" class="tag-badge">{{ tag }}</span>
-    </div>
-
     <div class="post-list">
       <a v-for="post in posts" :key="post.path" class="post-card" :href="post.path">
         <div class="post-card-header">
@@ -51,7 +41,7 @@ const allTags = computed(() => {
     </div>
 
     <p v-if="posts.length === 0" class="post-empty">
-      No posts yet. Create a <code>.md</code> file in <code>src/posts/</code>.
+      暂无博客文章。
     </p>
   </div>
 </template>

@@ -6,7 +6,7 @@ editLink: false
 
 <div class="simple-page">
 
-# Honors & Awards
+<p class="honors-heading">Honors & Awards</p>
 
 <HonorList />
 

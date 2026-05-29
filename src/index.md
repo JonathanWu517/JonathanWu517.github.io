@@ -3,17 +3,11 @@ title: 首页
 aside: false
 editLink: false
 hero:
-  avatar: /avatar.svg
+  avatar: /证件照头像.jpg
   name: "Jonathan Wu"
-  title: "学生 · 机器人爱好者"
+  title: "wuyh@stu.just.edu.cn"
   bio: "热爱机器人技术，热衷于搭建能够感知和行动的智能系统。"
 social:
-  - text: "GitHub"
-    url: "https://github.com/JonathanWu517"
-  - text: "LinkedIn"
-    url: "https://www.linkedin.com/"
-  - text: "Email"
-    url: "mailto:your-email@example.com"
 aboutSection:
   title: "关于我"
   description: "了解更多关于我的背景、研究兴趣、荣誉和论文发表。"
@@ -24,8 +18,10 @@ stats:
     label: "博客文章"
   - value: "0"
     label: "项目"
-  - value: "0"
+  - value: "1"
     label: "论文"
+  - value: "7"
+    label: "荣誉"
 projectsSection:
   title: "项目"
   subtitle: "我的作品和实验集合。"
@@ -44,7 +40,7 @@ projects:
     link: "/posts/"
   - iconText: "◇"
     title: "论文发表"
-    description: "研究论文、预印本和技术报告。"
+    description: "多智能体深度强化学习、无人机网络路由优化。"
     link: "/papers/"
   - iconText: "◎"
     title: "荣誉与奖项"

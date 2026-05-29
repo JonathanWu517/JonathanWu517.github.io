@@ -2,10 +2,12 @@
 import { computed } from 'vue'
 import { useData } from 'vitepress'
 import { data as posts } from '../posts.data'
+import { data as honorsRaw } from '../honors.data'
 
 const { frontmatter } = useData()
 
 const blogCount = computed(() => posts.length)
+const honorCount = computed(() => honorsRaw.filter(h => h.url !== '/honors/').length)
 </script>
 
 <template>
@@ -24,8 +26,10 @@ const blogCount = computed(() => posts.length)
         <div class="profile-info">
           <h1 class="home-name">{{ frontmatter.hero?.name || 'Your Name' }}</h1>
           <p class="home-title">
-            <span class="prompt">&gt;</span>
-            {{ frontmatter.hero?.title || 'Software Developer' }}
+            <span v-if="frontmatter.hero?.title?.includes('@')" class="prompt mail-icon">&#9993;</span>
+            <span v-else class="prompt">&gt;</span>
+            <a v-if="frontmatter.hero?.title?.includes('@')" :href="'mailto:' + frontmatter.hero.title">{{ frontmatter.hero.title }}</a>
+            <span v-else>{{ frontmatter.hero?.title || 'Software Developer' }}</span>
           </p>
         </div>
       </div>
@@ -61,7 +65,7 @@ const blogCount = computed(() => posts.length)
     <section class="home-stats-section" v-if="frontmatter.stats?.length">
       <div class="home-stats">
         <div class="home-stat" v-for="(stat, idx) in frontmatter.stats" :key="stat.label">
-          <span class="stat-value">{{ idx === 0 ? blogCount : stat.value }}</span>
+          <span class="stat-value">{{ idx === 0 ? blogCount : idx === 3 ? honorCount : stat.value }}</span>
           <span class="stat-label">{{ stat.label }}</span>
         </div>
       </div>

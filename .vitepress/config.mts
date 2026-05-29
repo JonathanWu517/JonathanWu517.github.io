@@ -18,6 +18,15 @@ export default defineConfig({
     ['meta', { property: 'og:description', content: '个人主页、作品集与博客。' }],
     ['script', {}, `
       (function(){
+        var key='__vp_scroll';
+        var now=Date.now();
+        var saved=sessionStorage.getItem(key);
+        if(saved){ try{ var s=JSON.parse(saved); if(now-s.t<3e4){ window.scrollTo(0,s.y); } }catch(e){} sessionStorage.removeItem(key); }
+        window.addEventListener('beforeunload',function(){ sessionStorage.setItem(key,JSON.stringify({y:window.scrollY,t:now})); });
+      })();
+    `],
+    ['script', {}, `
+      (function(){
         var d=document;
         var modal=d.createElement('div');
         modal.id='wechat-modal';

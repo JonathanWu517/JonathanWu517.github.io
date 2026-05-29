@@ -6,7 +6,7 @@ editLink: false
 
 <div class="simple-page">
 
-# 荣誉与奖项
+<p class="honors-heading">荣誉与奖项</p>
 
 <HonorList />
 

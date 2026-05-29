@@ -6,9 +6,7 @@ editLink: false
 
 <div class="simple-page">
 
-# Blog
-
-<p class="lead">My learning notes, technical write-ups, and thoughts. Create a new <code>.md</code> file in <code>src/posts/</code> to add a post.</p>
+<p class="blog-heading">Blog</p>
 
 <BlogList />
 

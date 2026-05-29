@@ -6,8 +6,6 @@ editLink: false
 
 <div class="simple-page">
 
-# 论文发表
-
 <PaperList />
 
 </div>

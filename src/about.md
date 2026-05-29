@@ -13,45 +13,51 @@ Hi! I'm a student passionate about robotics. Welcome to my personal website.
 
 </div>
 
-## 经历
+## 教育经历
 
-<div class="about-list">
-  <div class="about-item">
-    <strong>你的职位 / 角色</strong>
-    <span>组织 / 公司名称</span>
-    <p>简要描述你的职责、工作内容和成就。</p>
-  </div>
-  <div class="about-item">
-    <strong>教育背景 / 过往经历</strong>
-    <span>学校或机构名称</span>
-    <p>学位、专业或在此期间的重要经历。</p>
-  </div>
-</div>
-
-## 技能
-
-<div class="about-list">
-  <div class="about-item">
-    <strong>编程语言</strong>
-    <p>Python、JavaScript、TypeScript、C++ 等你使用的语言。</p>
-  </div>
-  <div class="about-item">
-    <strong>工具与框架</strong>
-    <p>Vue、React、Node.js、Git、Docker 等你使用的工具。</p>
+<div class="edu-card">
+  <img class="edu-badge" src="/school-badge.png" alt="校徽" />
+  <div class="edu-info">
+    <strong><a href="https://www.just.edu.cn/" target="_blank" rel="noopener">江苏科技大学</a></strong>
+    <span class="edu-meta">2023–2027</span>
+    <p><a href="https://zidonghua.just.edu.cn/" target="_blank" rel="noopener">自动化学院</a> · 自动化专业 · 本科</p>
   </div>
 </div>
 
 ## 论文发表
 
-<p>完整论文列表请查看<a href="/papers/">论文页面</a>。</p>
+<p class="paper-ref">[1] <a href="https://doi.org/10.3390/drones10030184" target="_blank" rel="noopener"><strong>邬昱豪</strong>、邱修林、宋博、叶柯琪、徐雷、杨宇旺. Multi-Agent Deep Reinforcement Learning for Coding-Aware and Energy-Balanced Routing in Dynamic Drone Networks. <em>Drones</em>, 2026.</a></p>
 
 ## 荣誉与奖项
 
-<p>完整荣誉列表请查看<a href="/honors/">荣誉页面</a>。</p>
-
-## 联系方式
-
-- GitHub: [JonathanWu517](https://github.com/JonathanWu517)
-- 邮箱: your-email@example.com
-
+<div class="honor-list-about">
+  <div class="honor-row">
+    <span class="honor-name">&#8226; 2025年「挑战杯」全国大学生课外学术科技作品竞赛「揭榜挂帅」擂台赛（队长）</span>
+    <span class="honor-meta">国家二等奖</span>
+  </div>
+  <div class="honor-row">
+    <span class="honor-name">&#8226; 2025年CUMCM 中国大学生数学建模竞赛</span>
+    <span class="honor-meta">国家二等奖</span>
+  </div>
+  <div class="honor-row">
+    <span class="honor-name">&#8226; 2025年中国大学生工程实践与创新能力大赛</span>
+    <span class="honor-meta">省级一等奖</span>
+  </div>
+  <div class="honor-row">
+    <span class="honor-name">&#8226; 2024年CUMCM 中国大学生数学建模竞赛</span>
+    <span class="honor-meta">省级一等奖</span>
+  </div>
+  <div class="honor-row">
+    <span class="honor-name">&#8226; 2025年"正大杯"全国大学生市场调查与分析大赛</span>
+    <span class="honor-meta">省级一等奖</span>
+  </div>
+  <div class="honor-row">
+    <span class="honor-name">&#8226; 2024中国大学生计算机设计大赛</span>
+    <span class="honor-meta">省级三等奖</span>
+  </div>
+  <div class="honor-row">
+    <span class="honor-name">&#8226; 2025年蓝桥杯全国软件和信息技术专业人才程序设计大赛</span>
+    <span class="honor-meta">省级三等奖</span>
+  </div>
+</div>
 </div>
