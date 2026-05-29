@@ -1,10 +1,14 @@
 ---
-title: First Blog Post
-date: 2026-05-28
-tags: [sample, getting-started]
-description: My first blog post demonstrating the blog system with tags and summaries.
+title: 第一篇博客文章
+titleEn: First Blog Post
+date: 2026-05-28 15:30
+tags: [示例, 入门]
+tagsEn: [sample, getting-started]
+description: 这是我的第一篇博客文章，用来演示博客系统的标签和摘要功能。
+descriptionEn: My first blog post demonstrating the blog system with tags and summaries.
 editLink: false
 ---
+
 
 # First Blog Post
 

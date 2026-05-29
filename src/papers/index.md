@@ -1,12 +1,12 @@
 ---
-title: Papers & Publications
+title: 论文发表
 aside: false
 editLink: false
 ---
 
 <div class="simple-page">
 
-# Papers & Publications
+# 论文发表
 
 <PaperList />
 

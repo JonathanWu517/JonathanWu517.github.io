@@ -1,14 +1,14 @@
 ---
-title: Blog
+title: 博客
 aside: false
 editLink: false
 ---
 
 <div class="simple-page">
 
-# Blog
+# 博客
 
-<p class="lead">My learning notes, technical write-ups, and thoughts. Create a new <code>.md</code> file in <code>src/en/posts/</code> to add a post.</p>
+<p class="lead">记录我的学习过程、技术笔记和思考。在 <code>src/posts/</code> 目录下新建 <code>.md</code> 文件即可发布文章。</p>
 
 <BlogList />
 

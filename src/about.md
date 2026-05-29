@@ -1,5 +1,5 @@
 ---
-title: About
+title: 关于我
 aside: false
 editLink: false
 ---
@@ -13,62 +13,45 @@ Hi! I'm a student passionate about robotics. Welcome to my personal website.
 
 </div>
 
-## Experience
+## 经历
 
 <div class="about-list">
   <div class="about-item">
-    <strong>Your Role / Position</strong>
-    <span>Organization / Company Name</span>
-    <p>Brief description of your role, responsibilities, and achievements.</p>
+    <strong>你的职位 / 角色</strong>
+    <span>组织 / 公司名称</span>
+    <p>简要描述你的职责、工作内容和成就。</p>
   </div>
   <div class="about-item">
-    <strong>Previous Role / Education</strong>
-    <span>Institution Name</span>
-    <p>Degree, major, or key accomplishments during this period.</p>
+    <strong>教育背景 / 过往经历</strong>
+    <span>学校或机构名称</span>
+    <p>学位、专业或在此期间的重要经历。</p>
   </div>
 </div>
 
-## Skills
+## 技能
 
 <div class="about-list">
   <div class="about-item">
-    <strong>Programming Languages</strong>
-    <p>Python, JavaScript, TypeScript, C++, or whatever you use.</p>
+    <strong>编程语言</strong>
+    <p>Python、JavaScript、TypeScript、C++ 等你使用的语言。</p>
   </div>
   <div class="about-item">
-    <strong>Tools & Frameworks</strong>
-    <p>Vue, React, Node.js, Git, Docker, or whatever tools you work with.</p>
+    <strong>工具与框架</strong>
+    <p>Vue、React、Node.js、Git、Docker 等你使用的工具。</p>
   </div>
 </div>
 
-## Publications
+## 论文发表
 
-<p>See my full publication list on the <a href="/papers/">Papers</a> page.</p>
+<p>完整论文列表请查看<a href="/papers/">论文页面</a>。</p>
 
-<div class="about-list">
-  <div class="about-item">
-    <strong>Paper Title</strong>
-    <span>Journal / Conference Name (2025)</span>
-    <p>Authors: You, Co-author. Brief one-line summary of the paper.</p>
-  </div>
-</div>
+## 荣誉与奖项
 
-## Honors & Awards
+<p>完整荣誉列表请查看<a href="/honors/">荣誉页面</a>。</p>
 
-<p>See all honors on the <a href="/honors/">Honors</a> page.</p>
-
-<div class="about-list">
-  <div class="about-item">
-    <strong>Award Name</strong>
-    <span>Organization · 2025</span>
-    <p>Brief description of the award or recognition.</p>
-  </div>
-</div>
-
-## Contact
+## 联系方式
 
 - GitHub: [JonathanWu517](https://github.com/JonathanWu517)
-- Email: your-email@example.com
-- LinkedIn: [Your LinkedIn](https://www.linkedin.com/)
+- 邮箱: your-email@example.com
 
 </div>

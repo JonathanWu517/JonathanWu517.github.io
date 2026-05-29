@@ -1,13 +1,13 @@
 ---
-title: 荣誉与奖项
+title: Papers & Publications
 aside: false
 editLink: false
 ---
 
 <div class="simple-page">
 
-# 荣誉与奖项
+# Papers & Publications
 
-<HonorList />
+<PaperList />
 
 </div>

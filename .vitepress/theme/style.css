@@ -51,6 +51,20 @@ body {
     linear-gradient(180deg, var(--vp-c-bg), var(--vp-c-bg-alt));
 }
 
+/* ---------- Social icons ---------- */
+.VPSocialLinks {
+  gap: 16px !important;
+}
+.VPSocialLinks .VPSocialLink {
+  width: 20px;
+  height: 20px;
+}
+.VPSocialLinks .vp-social-link-icon,
+.VPSocialLinks .vp-social-link-icon svg {
+  width: 20px !important;
+  height: 20px !important;
+}
+
 /* ---------- Navbar (top only, no sidebar) ---------- */
 .VPNav {
   border-bottom: 1px solid var(--vp-c-divider);
@@ -59,8 +73,41 @@ body {
 }
 
 .VPNavBarTitle .title {
+  font-size: 22px;
   font-weight: 800;
   letter-spacing: -0.03em;
+}
+
+/* Search box — 导航栏内可见的输入框 */
+.custom-search-wrap {
+  display: flex;
+  align-items: center;
+}
+.custom-search-input {
+  width: 180px;
+  height: 34px;
+  border-radius: 8px;
+  border: 1px solid var(--vp-c-divider);
+  background: var(--vp-c-bg-alt);
+  color: var(--vp-c-text-1);
+  padding: 0 12px 0 32px;
+  font-size: 13px;
+  outline: none;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23a9b1d6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.custom-search-input:hover {
+  border-color: var(--vp-c-brand-1);
+}
+.custom-search-input:focus {
+  border-color: var(--vp-c-brand-1);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--vp-c-brand-1) 15%, transparent);
+}
+.custom-search-input::placeholder {
+  color: var(--vp-c-text-3);
 }
 
 .VPNavBar.has-sidebar .content-body,
@@ -489,10 +536,6 @@ body {
 }
 
 .post-card-header {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 14px;
   margin-bottom: 8px;
 }
 
@@ -568,6 +611,51 @@ body {
   font-size: 13px;
   font-style: italic;
   margin: 0 0 6px !important;
+}
+
+/* Compact honor / paper list */
+.honor-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid var(--vp-c-divider);
+}
+.honor-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--vp-c-divider);
+  text-decoration: none !important;
+  color: var(--vp-c-text-1);
+  transition: background 0.15s, padding 0.2s;
+}
+.honor-item:hover {
+  background: color-mix(in srgb, var(--vp-c-brand-1) 6%, transparent);
+  padding-left: 20px;
+}
+.honor-bullet {
+  font-size: 18px;
+  color: var(--vp-c-text-3);
+  flex-shrink: 0;
+  line-height: 1;
+}
+.honor-title {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--vp-c-text-1);
+  flex: 1;
+  line-height: 1.5;
+}
+.honor-award {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--vp-c-brand-1);
+  white-space: nowrap;
+  flex-shrink: 0;
+  background: color-mix(in srgb, var(--vp-c-brand-1) 10%, transparent);
+  padding: 3px 10px;
+  border-radius: 4px;
 }
 
 .post-empty {

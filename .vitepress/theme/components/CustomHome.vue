@@ -1,7 +1,11 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import { useData } from 'vitepress'
+import { data as posts } from '../posts.data'
 
 const { frontmatter } = useData()
+
+const blogCount = computed(() => posts.length)
 </script>
 
 <template>
@@ -56,8 +60,8 @@ const { frontmatter } = useData()
     <!-- ===== Stats Row ===== -->
     <section class="home-stats-section" v-if="frontmatter.stats?.length">
       <div class="home-stats">
-        <div class="home-stat" v-for="stat in frontmatter.stats" :key="stat.label">
-          <span class="stat-value">{{ stat.value }}</span>
+        <div class="home-stat" v-for="(stat, idx) in frontmatter.stats" :key="stat.label">
+          <span class="stat-value">{{ idx === 0 ? blogCount : stat.value }}</span>
           <span class="stat-label">{{ stat.label }}</span>
         </div>
       </div>

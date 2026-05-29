@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useData } from 'vitepress'
+import { data as postsRaw } from '../posts.data'
 
 const { lang } = useData()
 
@@ -12,41 +13,15 @@ interface Post {
   description: string
 }
 
-const enModules = import.meta.glob<any>(
-  '../../../src/posts/*.md',
-  { eager: true }
-)
-const zhModules = import.meta.glob<any>(
-  '../../../src/zh/posts/*.md',
-  { eager: true }
-)
-
-function buildPosts(modules: Record<string, any>, base: string): Post[] {
-  return Object.entries(modules)
-    .filter(([fp]) => !fp.endsWith('/index.md'))
-    .map(([fp, mod]) => {
-      const fm = mod.frontmatter || {}
-      const slug = fp.replace(/.*\/posts\//, `${base}/`).replace(/\.md$/, '')
-      return {
-        path: slug,
-        title: fm.title || 'Untitled',
-        date: fm.date || '',
-        tags: fm.tags || [],
-        description: fm.description || ''
-      }
-    })
-    .sort((a, b) => {
-      if (!a.date) return 1
-      if (!b.date) return -1
-      return new Date(b.date).getTime() - new Date(a.date).getTime()
-    })
-}
-
 const posts = computed<Post[]>(() => {
-  if (lang.value === 'zh-CN') {
-    return buildPosts(zhModules, '/zh/posts')
-  }
-  return buildPosts(enModules, '/posts')
+  const isEn = lang.value === 'en-US'
+  return postsRaw.map(p => ({
+    path: p.url,
+    title: (isEn && p.titleEn) ? p.titleEn : p.title,
+    date: p.date || '',
+    tags: (isEn && p.tagsEn?.length) ? p.tagsEn : p.tags,
+    description: (isEn && p.descriptionEn) ? p.descriptionEn : p.description
+  }))
 })
 
 const allTags = computed(() => {
@@ -65,8 +40,8 @@ const allTags = computed(() => {
     <div class="post-list">
       <a v-for="post in posts" :key="post.path" class="post-card" :href="post.path">
         <div class="post-card-header">
-          <time v-if="post.date" class="post-date">{{ post.date }}</time>
           <h2 class="post-card-title">{{ post.title }}</h2>
+          <time v-if="post.date" class="post-date">{{ post.date }}</time>
         </div>
         <p v-if="post.description" class="post-card-desc">{{ post.description }}</p>
         <div v-if="post.tags.length > 0" class="post-card-tags">
