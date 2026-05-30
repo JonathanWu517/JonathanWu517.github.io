@@ -1,13 +1,13 @@
 ---
-title: 「挑战杯」全国大学生课外学术科技作品竞赛「揭榜挂帅」擂台赛（队长）
+title: 'Challenge Cup — National Undergraduate Extracurricular Academic Science & Technology Contest (Team Leader)'
 date: 2025-11
-organization: 国家二等奖
-description: 担任队长，带领团队完成揭榜挂帅专项赛题。
+organization: National Second Prize
+description: Led the team to complete the "Unveiling & Commanding" special competition challenge.
 ---
 
-# 「挑战杯」全国大学生课外学术科技作品竞赛「揭榜挂帅」擂台赛
+# "Challenge Cup" National Undergraduate Extracurricular Academic Science & Technology Contest
 
-- **奖项**：国家二等奖
-- **角色**：队长
-- **时间**：2025.11
-- **简介**：担任队长，带领团队完成揭榜挂帅专项赛题。
+- **Award**: National Second Prize
+- **Role**: Team Leader
+- **Date**: 2025.11
+- **Summary**: Led the team to complete the "Unveiling & Commanding" special competition challenge.

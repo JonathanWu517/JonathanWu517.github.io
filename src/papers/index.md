@@ -1,5 +1,5 @@
 ---
-title: 论文发表
+title: Papers & Publications
 aside: false
 editLink: false
 ---

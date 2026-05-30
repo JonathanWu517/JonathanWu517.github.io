@@ -1,12 +1,12 @@
 ---
-title: 博客
+title: Blog
 aside: false
 editLink: false
 ---
 
 <div class="simple-page">
 
-<p class="blog-heading">博客</p>
+<p class="blog-heading">Blog</p>
 
 <BlogList />
 

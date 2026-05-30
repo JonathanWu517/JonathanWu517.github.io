@@ -1,13 +1,13 @@
 ---
-title: 中国大学生工程实践与创新能力大赛（核心成员）
+title: China National Undergraduate Engineering Practice & Innovation Contest (Core Member)
 date: 2025-04
-organization: 省级一等奖
-description: 基于 STM32 完成主控程序开发，实现电机/舵机的精准闭环控制；基于 Jetson Nano 构建轻量化边缘视觉识别模块，自主开发 Qt 人机交互界面，并独立设计上下位机通信协议。
+organization: Provincial First Prize
+description: Developed main control program on STM32 with precise closed-loop motor/servo control; built lightweight edge vision recognition module on Jetson Nano; built Qt HMI and custom host-device communication protocol.
 ---
 
-# 中国大学生工程实践与创新能力大赛
+# China National Undergraduate Engineering Practice & Innovation Contest
 
-- **奖项**：省级一等奖
-- **角色**：核心成员
-- **时间**：2025.04
-- **工作内容**：基于 STM32 完成主控程序开发，实现电机/舵机的精准闭环控制；基于 Jetson Nano 构建轻量化边缘视觉识别模块，自主开发 Qt 人机交互界面，并独立设计上下位机通信协议。
+- **Award**: Provincial First Prize
+- **Role**: Core Member
+- **Date**: 2025.04
+- **Work**: Developed main control program on STM32 with precise closed-loop motor/servo control; built lightweight edge vision recognition module on Jetson Nano; built a Qt-based HMI and custom host-device communication protocol.

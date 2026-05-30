@@ -1,11 +1,11 @@
 ---
-title: 蓝桥杯全国软件和信息技术专业人才程序设计大赛（个人）
+title: Lanqiao Cup — National Software & IT Talent Programming Contest (Individual)
 date: 2025-05
-organization: 省级三等奖
+organization: Provincial Third Prize
 ---
 
-# 蓝桥杯全国软件和信息技术专业人才程序设计大赛
+# Lanqiao Cup — National Software & IT Talent Programming Contest
 
-- **奖项**：省级三等奖
-- **角色**：个人参赛
-- **时间**：2025.05
+- **Award**: Provincial Third Prize
+- **Role**: Individual
+- **Date**: 2025.05

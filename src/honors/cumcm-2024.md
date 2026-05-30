@@ -1,13 +1,13 @@
 ---
-title: 2024 CUMCM 中国大学生数学建模竞赛（队长）
+title: 2024 CUMCM — China Undergraduate Mathematical Contest in Modeling (Team Leader)
 date: 2024-09
-organization: 省级一等奖
-description: 担任队长，带队完成数学建模竞赛。
+organization: Provincial First Prize
+description: Led the team to complete the mathematical modeling contest.
 ---
 
-# 2024 CUMCM 中国大学生数学建模竞赛
+# 2024 CUMCM — China Undergraduate Mathematical Contest in Modeling
 
-- **奖项**：省级一等奖
-- **角色**：队长
-- **时间**：2024.09
-- **简介**：担任队长，带队完成数学建模竞赛。
+- **Award**: Provincial First Prize
+- **Role**: Team Leader
+- **Date**: 2024.09
+- **Summary**: Led the team to complete the mathematical modeling contest.

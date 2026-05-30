@@ -1,11 +1,11 @@
 ---
-title: 中国大学生计算机设计大赛（核心成员）
+title: China University Computer Design Contest (Core Member)
 date: 2025-05
-organization: 省级三等奖
+organization: Provincial Third Prize
 ---
 
-# 中国大学生计算机设计大赛
+# China University Computer Design Contest
 
-- **奖项**：省级三等奖
-- **角色**：核心成员
-- **时间**：2025.05
+- **Award**: Provincial Third Prize
+- **Role**: Core Member
+- **Date**: 2025.05

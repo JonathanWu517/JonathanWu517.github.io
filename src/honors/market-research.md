@@ -1,11 +1,11 @@
 ---
-title: 全国大学生市场调查与分析大赛（核心成员）
+title: National Undergraduate Market Research & Analysis Contest (Core Member)
 date: 2025-04
-organization: 省级一等奖
+organization: Provincial First Prize
 ---
 
-# 全国大学生市场调查与分析大赛
+# National Undergraduate Market Research & Analysis Contest
 
-- **奖项**：省级一等奖
-- **角色**：核心成员
-- **时间**：2025.04
+- **Award**: Provincial First Prize
+- **Role**: Core Member
+- **Date**: 2025.04

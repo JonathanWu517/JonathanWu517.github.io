@@ -22,7 +22,7 @@ const papers = papersRaw.sort((a, b) => {
     </div>
 
     <p v-if="papers.length === 0" class="post-empty">
-      暂无论文。
+      No papers yet.
     </p>
   </div>
 </template>

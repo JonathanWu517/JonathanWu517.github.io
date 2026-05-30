@@ -41,7 +41,7 @@ const posts = computed<Post[]>(() => {
     </div>
 
     <p v-if="posts.length === 0" class="post-empty">
-      暂无博客文章。
+      No blog posts yet.
     </p>
   </div>
 </template>

@@ -17,7 +17,7 @@ const honors = honorsRaw.sort((a, b) => {
     </a>
 
     <p v-if="honors.length === 0" class="post-empty">
-      暂无荣誉。在 <code>src/honors/</code> 目录下新建 <code>.md</code> 文件即可添加。
+      No honors yet. Add <code>.md</code> files to <code>src/honors/</code>.
     </p>
   </div>
 </template>
