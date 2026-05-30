@@ -1,82 +1,83 @@
 ---
-title: QT6 + OpenCV Dev Environment Setup on Windows
+title: Window系统下QT6 + OpenCV开发环境配置
 titleEn: QT6 + OpenCV Dev Environment Setup on Windows
 date: 2026-05-29 20:03
-tags: [QT6, OpenCV, CMake, Windows, Environment Setup]
+tags: [QT6, OpenCV, CMake, Windows, 环境配置]
 tagsEn: [QT6, OpenCV, CMake, Windows, Environment Setup]
-description: A complete guide to setting up QT6 + OpenCV dev environment on Windows 11, including OpenCV compilation, CMake configuration, and common error fixes.
+description: 详细介绍在 Windows 11 系统下配置 QT6 + OpenCV 开发环境的完整流程，包括 OpenCV 编译、CMake 配置、常见报错解决方案。
 descriptionEn: A complete guide to setting up QT6 + OpenCV dev environment on Windows 11, including OpenCV compilation, CMake configuration, and common error fixes.
 ---
 
-# QT6 + OpenCV Dev Environment Setup on Windows
 
-> This article is also available on [WeChat Official Account](https://mp.weixin.qq.com/s/4Ar77FBhNBwBzsD4fq1nVw).
+# Window 系统下 QT6 + OpenCV 开发环境配置
 
-## Introduction
+> 本文也发布在[微信公众号](https://mp.weixin.qq.com/s/4Ar77FBhNBwBzsD4fq1nVw)。
 
-While there are many tutorials online, they often involve outdated environments. As developers, we prefer to use the latest versions. After trial and exploration, I successfully set up the environment. Due to the limited sample size, unexpected issues may still arise. If you encounter problems during compilation, feel free to reach out via the comments section or email — I'm happy to help. Of course, before contacting me, I suggest searching online first to see if a solution already exists.
+## 前言
 
-Email: krivewyh@163.com
+虽然网上有很多教程，但它们通常涉及过时的环境。作为开发者，我们习惯于使用最新的版本。经过一系列的尝试和探索，我终于成功配置了环境。但由于我们的样本数量有限，我们不确定在过程中是否会遇到其他问题。如果您在编译过程中遇到问题，可以在后台留言或者发邮件，欢迎随时咨询我，我会尽力提供帮助。当然，在联系我之前，建议您先在网上搜索相关帖子，看看是否有现成的解决方案。
 
-If you haven't successfully compiled the OpenCV library, here's a pre-compiled version:
+邮箱地址：krivewyh@163.com
 
-- Baidu Netdisk: [https://pan.baidu.com/s/1YtclVnELZiE3tLUVqyxCuQ?pwd=4ZPM](https://pan.baidu.com/s/1YtclVnELZiE3tLUVqyxCuQ?pwd=4ZPM)
-- Extraction code: `4ZPM`
+如果你并没有成功编译好 opencv 库，这里我提供我编译好的 opencv 库：
 
-## Environment Overview
+- 百度网盘链接：[https://pan.baidu.com/s/1YtclVnELZiE3tLUVqyxCuQ?pwd=4ZPM](https://pan.baidu.com/s/1YtclVnELZiE3tLUVqyxCuQ?pwd=4ZPM)
+- 提取码：`4ZPM`
 
-| Component | Version |
-|-----------|---------|
-| OS | Windows 11 |
+## 环境介绍
+
+| 组件 | 版本 |
+|------|------|
+| 系统 | Windows 11 |
 | QT IDE | 6.7.1 |
 | OpenCV | 4.9.0 |
 | CMake | 3.29.3 |
 
-## 1. OpenCV Download
+## 一、OpenCV 下载
 
-OpenCV download: [https://opencv.org/releases/](https://opencv.org/releases/)
+OpenCV 下载：[https://opencv.org/releases/](https://opencv.org/releases/)
 
 ![](/blog/qt6-opencv/01.png)
 
-Extract the OpenCV source code:
+之后打开这个文件，进行 opencv 源码的解压：
 
 ![](/blog/qt6-opencv/02.png)
 
-Choose your extraction path:
+自己选择路径进行解压：
 
 ![](/blog/qt6-opencv/03.png)
 
-## 2. CMake Download
+## 二、CMake 下载
 
-CMake download: [https://cmake.org/download/](https://cmake.org/download/)
+CMake 下载：[https://cmake.org/download/](https://cmake.org/download/)
 
-Choose the following version:
+选择下列版本：
 
 ![](/blog/qt6-opencv/04.png)
 
-Select your download path:
+选择你的下载路径：
 
 ![](/blog/qt6-opencv/05.png)
 
-## 3. QT6 Download
+## 三、QT6 下载
 
-QT download: [https://www.qt.io/download-qt-installer-oss](https://www.qt.io/download-qt-installer-oss)
+QT 下载：[https://www.qt.io/download-qt-installer-oss](https://www.qt.io/download-qt-installer-oss)
 
 ![](/blog/qt6-opencv/06.png)
 
-Download the Windows version — click **Qt Online Install for Windows**.
+下载 Windows 版本，点击 **Qt Online Install for Windows**。
 
-Remember your download path, but **do NOT launch the installer yet**. Qt uses overseas mirrors by default, which can be very slow and may cause failures.
+之后选择你的下载路径并且记住，**此时一定不要打开下载安装**，因为 Qt 目前使用的是国外的源，下载会很慢，有可能失败。
 
-### Mirror Switch Method
+### 换源方法
 
-Open the terminal — press `Win+R`, type `cmd`:
+打开终端，使用 `Win+R`，输入 `cmd`：
 
 ![](/blog/qt6-opencv/07.png)
 
 ![](/blog/qt6-opencv/08.png)
 
-Find `qt-unified-windows-x64-X.X.X-online.exe`, navigate to its folder (the path you chose when downloading Qt):
+找到 `qt-unified-windows-x64-X.X.X-online.exe`，进入该文件的文件夹（这文件夹是上文你的 Qt 下载时你选择所在的路径），具体如下：
 
 ```bash
 cd yourpath
@@ -85,21 +86,21 @@ qt-unified-windows-x64-X.X.X-online.exe --mirror https://mirror.nju.edu.cn/qt
 
 ![](/blog/qt6-opencv/09.png)
 
-> Replace `qt-unified-windows-x64-X.X.X-online.exe` with your actual Qt installer name. Mine is `qt-online-installer-windows-x64-4.8.0.exe --mirror https://mirror.nju.edu.cn/qt`
+> 注意将 `qt-unified-windows-x64-X.X.X-online.exe` 替换成你下载好的 Qt 下载器的名称。这里我的是 `qt-online-installer-windows-x64-4.8.0.exe --mirror https://mirror.nju.edu.cn/qt`
 
-The installer will launch automatically. You'll need to log in or register a Qt account:
+之后安装程序会自动打开。此时需要登入或注册一个 Qt 账号：
 
 ![](/blog/qt6-opencv/10.png)
 
-Then proceed with the standard Qt installation. Apart from component selection (additional components can be installed later as needed), there's nothing special to watch out for. Here's what I chose:
+之后就是常规的 Qt 下载安装了，除了需要下载的组件需要注意外（特殊组件的下载在后面需要的时候可以再下载），其他的下载安装没什么太多需要注意的。这里我选择的是：
 
 ![](/blog/qt6-opencv/11.png)
 
-Click Next through the remaining steps.
+之后不断点击下一步就可以了。
 
-## 4. Environment Variables Setup
+## 四、配置环境变量
 
-Open System Settings:
+打开系统设置：
 
 ![](/blog/qt6-opencv/12.png)
 
@@ -111,38 +112,38 @@ Open System Settings:
 
 ![](/blog/qt6-opencv/16.png)
 
-Add the following paths to your environment variables — replace with your actual folder paths:
+添加以下地址到环境变量中，这些地址需要你们自己去寻找自己文件夹地址进行替换：
 
 ![](/blog/qt6-opencv/17.png)
 
-## 5. CMake Build — Compile OpenCV
+## 五、CMake 编译 OpenCV 库并生成
 
-This is the most critical step.
+这一步是最关键的。
 
-### Step 1. Initial Configuration
+### Step 1. 初步配置
 
 ![](/blog/qt6-opencv/18.png)
 
-After setting paths, click **Configure**:
+设置好后点击 **Configure**：
 
 ![](/blog/qt6-opencv/19.png)
 
-Select Qt's built-in MinGW compiler (gcc and g++):
+选择 Qt 自带的编译器 MinGW 的 gcc 和 g++：
 
 ![](/blog/qt6-opencv/20.png)
 
-Example paths:
+路径范例为：
 
 ```
 D:\Qt\Tools\mingw1120_64\bin\gcc.exe
 D:\Qt\Tools\mingw1120_64\bin\g++.exe
 ```
 
-Click **Finish**. After a lengthy wait, it should compile successfully.
+点击 **Finish**。经过漫长的等待后，应该是能够编译成功的。
 
-### Step 2. Troubleshooting Errors
+### Step 2. 排查错误
 
-Here are the warnings and errors I encountered (for reference):
+以下是我的警告和报错（仅供参考）：
 
 ![](/blog/qt6-opencv/21.png)
 
@@ -152,45 +153,46 @@ Here are the warnings and errors I encountered (for reference):
 
 ![](/blog/qt6-opencv/24.png)
 
-The warnings/errors are numbered 248, 144, 140, and 54 respectively.
+以下警告报错分别为 248、144、140、54。
 
-#### Fixing Errors 54, 140, 144
+#### 解决 54、140、144 报错
 
-Uncheck the following item — this is a path error warning, disabling it won't affect the software:
+取消勾选下面这一条，这个是路径错误的警告，取消勾选不会影响软件的运行：
 
 ![](/blog/qt6-opencv/25.png)
 
-#### Fixing Error 248
+#### 解决 248 报错
 
-Error 248 occurs when CMake cannot connect to the server during OpenCV compilation, causing failures downloading ffmpeg.dll, ippicv, etc.
+248 的报错来源于 CMake 编译 opencv 时无法连接服务器，导致下载 ffmpeg.dll、ippicv 等发生失败。
 
-Error 248 is caused by GitHub being inaccessible from mainland China. I tried multiple approaches — VPN, changing DNS — before finding this solution: **modify the .cmake download URLs to use a proxy**.
+248 的报错是因为 GitHub 是国外的网站，前期试了多种方法，比如梯子和更改电脑上网 IP 都没有解决，最后找到现在这种：**修改 .cmake 文件中的下载网站，利用代理下载**才成功解决。
 
-Here's a proxy service (you can find your own):
+这里提供一个代理网站，你也可以自己去找一个代理网站：
 
-- Proxy: [https://ghproxy.com/](https://ghproxy.com/)
+- 代理网站：[https://ghproxy.com/](https://ghproxy.com/)
+- GitHub Proxy 代理加速 (ghproxy.com)
 
-> Using a VPN is recommended if available.
+> 建议大家科学上网。
 
-**1. Navigate to** `F:\opencv\sources\3rdparty\ffmpeg`:
+**1. 找到目标文件夹** `F:\opencv\sources\3rdparty\ffmpeg`：
 
 ![](/blog/qt6-opencv/26.png)
 
-Modify the download URL:
+修改下载路径的代码：
 
 ![](/blog/qt6-opencv/27.png)
 
-Open with Notepad:
+用记事本打开：
 
 ![](/blog/qt6-opencv/28.png)
 
-Change this URL:
+把这一条网址：
 
 ```
 https://raw.githubusercontent.com/opencv/opencv_3rdparty/${FFMPEG_BINARIES_COMMIT}/ffmpeg/
 ```
 
-To:
+修改为：
 
 ```
 https://mirror.ghproxy.com/https://raw.githubusercontent.com/opencv/opencv_3rdparty/${FFMPEG_BINARIES_COMMIT}/ffmpeg/
@@ -198,73 +200,73 @@ https://mirror.ghproxy.com/https://raw.githubusercontent.com/opencv/opencv_3rdpa
 
 ![](/blog/qt6-opencv/29.png)
 
-**2. Navigate to** `F:\opencv\sources\modules\gapi\cmake`:
+**2. 找到目标文件夹** `F:\opencv\sources\modules\gapi\cmake`：
 
 ![](/blog/qt6-opencv/30.png)
 
 ![](/blog/qt6-opencv/31.png)
 
-Apply the same proxy modification:
+同理使用代理服务修改：
 
 ![](/blog/qt6-opencv/32.png)
 
-Change:
+把：
 
 ```
 https://github.com/opencv/ade/archive/
 ```
 
-To:
+修改为：
 
 ```
 https://mirror.ghproxy.com/https://github.com/opencv/ade/archive/
 ```
 
-After modification:
+修改后：
 
 ![](/blog/qt6-opencv/33.png)
 
-Now there should be no more errors or warnings.
+此时查阅后就不再有报错和警告。
 
-### Step 3. Continue QT Configuration
+### Step 3. 继续配置 QT
 
-Refer to the table below:
+参考下面表格：
 
 | Name | Value |
 |------|-------|
-| WITH_OPENGL | Checked |
-| WITH_QT | Checked |
-| WITH_IPP | Unchecked |
+| WITH_OPENGL | 选中 |
+| WITH_QT | 选中 |
+| WITH_IPP | 不选 |
 
-After selection, click **Configure**:
+选择完成之后点击 **Configure**：
 
 ![](/blog/qt6-opencv/34.png)
 
-We're using Qt6, so ignore Qt5. Set **Qt6_DIR** to: `D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6`
+我们是 Qt6 的版本，所以不管 Qt5，将 **Qt6_DIR** 后面的路径设置为：`D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6`
 
-> Make sure each path matches your actual installation. If not auto-filled, you'll need to locate them manually.
+> 注意表中的路径一定要和所对应的路径一样，如果没有自动填写好，需要一个个去找。
 
-Click **Configure** again.
+再次点击 **Configure**。
 
-After `Configuring done`, click **Generate**.
+`Configuring done` 之后点击 **Generate**。
 
-### Step 4. MinGW Build
+### Step 4. MinGW 编译
 
-Open terminal and navigate to the output folder:
+打开终端，进入输出文件夹：
 
 ![](/blog/qt6-opencv/35.png)
 
-Enter the following command to start compilation (`-j 16` for multi-core; adjust based on your CPU — use `mingw32-make -j 4` if unsure):
+输入如下指令开始编译（`-j 16` 多核编译），可以根据自己电脑是几核的来设定，如果不清楚建议使用 `mingw32-make -j 4`：
 
 ```bash
 mingw32-make -j 16
 ```
 
-Now wait. As long as there are no errors, you're good:
+接下来就是漫长的等待，只要没有出现报错就可以：
 
 ![](/blog/qt6-opencv/36.png)
 
-After compilation, install with:
+编译完成之后，输入如下指令安装：
 
 ```bash
 mingw32-make install
@@ -272,25 +274,25 @@ mingw32-make install
 
 ![](/blog/qt6-opencv/37.png)
 
-### Configure Environment Variables
+### 配置环境变量
 
 ![](/blog/qt6-opencv/38.png)
 
-## 6. Using OpenCV in QT
+## 六、QT 中使用 OpenCV
 
-### Step 1. Create a New Qt Project and Configure
+### Step 1. 新建 Qt 工程并配置
 
-Create a new project for testing:
+创建新的项目进行测试：
 
 ![](/blog/qt6-opencv/39.png)
 
-Modify the `.pro` configuration file:
+修改下面这个配置文件（后缀为 `.pro`）：
 
 ![](/blog/qt6-opencv/40.png)
 
 ![](/blog/qt6-opencv/41.png)
 
-Add the following paths (replace with your own):
+添加路径（注意换成自己文件的路径）：
 
 ```makefile
 INCLUDEPATH += D:\opencv\opencv\qt-opencv-build\install\include\
@@ -298,11 +300,11 @@ INCLUDEPATH += D:\opencv\opencv\qt-opencv-build\install\include\
 LIBS += -L D:\opencv\opencv\qt-opencv-build\lib\libopencv_*.a
 ```
 
-### Step 2. Test
+### Step 2. 测试
 
 ![](/blog/qt6-opencv/42.png)
 
-Test code:
+测试代码：
 
 ```cpp
 #include <opencv2/core/core.hpp>
@@ -312,7 +314,7 @@ using namespace cv;
 
 int main()
 {
-    Mat image = imread("C:\\Users\\86136\\Pictures\\Camera Roll\\1.jpg");    // replace with your path
+    Mat image = imread("C:\\Users\\86136\\Pictures\\Camera Roll\\1.jpg");    // 换成自己的路径
     resize(image, image, Size(128, 128));
     imshow("Display window", image);
     waitKey();
@@ -321,7 +323,7 @@ int main()
 }
 ```
 
-## Result
+## 效果展示
 
 ![](/blog/qt6-opencv/43.png)
 
@@ -329,6 +331,6 @@ int main()
 
 ---
 
-> **Original Article**: [QT6 + OpenCV Dev Environment Setup on Windows](https://mp.weixin.qq.com/s/4Ar77FBhNBwBzsD4fq1nVw)
+> **原文链接**：[Window系统下QT6 + opencv开发环境配置](https://mp.weixin.qq.com/s/4Ar77FBhNBwBzsD4fq1nVw)
 >
-> For questions, email: krivewyh@163.com
+> 如有问题，欢迎邮件联系：krivewyh@163.com

@@ -833,6 +833,8 @@ body {
   overflow: hidden;
   isolation: isolate;
   transition: border-color 0.3s;
+  background-color: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
 }
 .edu-card::before {
   content: '';

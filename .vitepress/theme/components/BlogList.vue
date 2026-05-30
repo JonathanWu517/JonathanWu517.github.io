@@ -1,9 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useData } from 'vitepress'
 import { data as postsRaw } from '../posts.data'
-
-const { lang } = useData()
 
 interface Post {
   path: string
@@ -14,13 +11,12 @@ interface Post {
 }
 
 const posts = computed<Post[]>(() => {
-  const isEn = lang.value === 'en-US'
   return postsRaw.map(p => ({
     path: p.url,
-    title: (isEn && p.titleEn) ? p.titleEn : p.title,
+    title: p.title,
     date: p.date || '',
-    tags: (isEn && p.tagsEn?.length) ? p.tagsEn : p.tags,
-    description: (isEn && p.descriptionEn) ? p.descriptionEn : p.description
+    tags: p.tags,
+    description: p.description
   }))
 })
 </script>
