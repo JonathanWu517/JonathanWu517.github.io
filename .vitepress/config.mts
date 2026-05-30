@@ -81,6 +81,7 @@ export default defineConfig({
     `],
     ['script', {}, `
       (function(){
+        var d=document;
         function setupModal(){
           var modal=d.createElement('div');
           modal.id='wechat-modal';
