@@ -115,12 +115,30 @@ export default defineConfig({
           el.appendChild(orcid);
         }
 
+        function tryAdd(){
+          var el = d.querySelector('.VPSocialLinks');
+          if(el) addIcons(el);
+        }
+
+        // Immediate try + periodic retry for initial load
+        tryAdd();
         var tries = 0;
         var t = setInterval(function(){
-          var el = d.querySelector('.VPSocialLinks');
-          if(el){ clearInterval(t); addIcons(el); return; }
-          if(++tries > 60){ clearInterval(t); }
-        }, 200);
+          tryAdd();
+          if(++tries > 50) clearInterval(t);
+        }, 300);
+
+        // MutationObserver for SPA navigation re-renders
+        var mo = new MutationObserver(function(){
+          tryAdd();
+        });
+        function startObserve(){
+          var nav = d.querySelector('.VPNav');
+          if(nav){ mo.observe(nav, {childList:true,subtree:true}); }
+          else{ setTimeout(startObserve,200); }
+        }
+        if(d.readyState==='loading'){ d.addEventListener('DOMContentLoaded',startObserve); }
+        else{ startObserve(); }
       })();
     `]
   ],
