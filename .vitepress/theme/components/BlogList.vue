@@ -2,6 +2,10 @@
 import { computed } from 'vue'
 import { data as postsRaw } from '../posts.data'
 
+const props = defineProps<{
+  category: 'notes' | 'internship'
+}>()
+
 interface Post {
   path: string
   title: string
@@ -11,14 +15,20 @@ interface Post {
 }
 
 const posts = computed<Post[]>(() => {
-  return postsRaw.map(p => ({
-    path: p.url,
-    title: p.title,
-    date: p.date || '',
-    tags: p.tags,
-    description: p.description
-  }))
+  return postsRaw
+    .filter(p => p.category === props.category)
+    .map(p => ({
+      path: p.url,
+      title: p.title,
+      date: p.date || '',
+      tags: p.tags,
+      description: p.description
+    }))
 })
+
+const emptyText = computed(() =>
+  props.category === 'internship' ? 'No internship notes yet.' : 'No notes yet.'
+)
 </script>
 
 <template>
@@ -37,7 +47,7 @@ const posts = computed<Post[]>(() => {
     </div>
 
     <p v-if="posts.length === 0" class="post-empty">
-      No blog posts yet.
+      {{ emptyText }}
     </p>
   </div>
 </template>

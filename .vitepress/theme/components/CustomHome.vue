@@ -8,6 +8,12 @@ const { frontmatter } = useData()
 
 const blogCount = computed(() => posts.length)
 const honorCount = computed(() => honorsRaw.filter(h => h.url !== '/honors/').length)
+const latestInternship = posts.find(p => p.category === 'internship')?.url
+
+function itemLink(link?: string) {
+  if (link === '/posts/internship/' && latestInternship) return latestInternship
+  return link || '#'
+}
 </script>
 
 <template>
@@ -83,7 +89,7 @@ const honorCount = computed(() => honorsRaw.filter(h => h.url !== '/honors/').le
           v-for="item in frontmatter.projects || []"
           :key="item.title"
           class="project-card"
-          :href="item.link || '#'"
+          :href="itemLink(item.link)"
           :target="item.link?.startsWith('http') ? '_blank' : undefined"
           :rel="item.link?.startsWith('http') ? 'noopener noreferrer' : undefined"
         >

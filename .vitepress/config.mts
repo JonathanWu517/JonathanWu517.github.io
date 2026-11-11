@@ -1,4 +1,31 @@
+import { readdirSync, readFileSync } from 'node:fs'
+import { dirname, resolve } from 'node:path'
+import { fileURLToPath } from 'node:url'
 import { defineConfig } from 'vitepress'
+
+const internshipDir = resolve(dirname(fileURLToPath(import.meta.url)), '../src/posts/internship')
+
+function internshipPosts() {
+  return readdirSync(internshipDir)
+    .filter(name => name.endsWith('.md') && name !== 'index.md')
+    .map(name => {
+      const raw = readFileSync(resolve(internshipDir, name), 'utf8')
+      const frontmatter = raw.match(/^---\r?\n([\s\S]*?)\r?\n---/)?.[1] ?? ''
+      const title = frontmatter.match(/^title:\s*(.+)$/m)?.[1]?.trim().replace(/^["']|["']$/g, '') ?? name
+      const date = frontmatter.match(/^date:\s*["']?([^"'\n]+?)["']?\s*$/m)?.[1]?.trim() ?? ''
+      const brief = frontmatter.match(/^brief:\s*(.+)$/m)?.[1]?.trim().replace(/^["']|["']$/g, '') ?? ''
+      return {
+        text: title,
+        link: `/posts/internship/${name.replace(/\.md$/, '')}`,
+        date,
+        brief
+      }
+    })
+    .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
+}
+
+const posts = internshipPosts()
+const latestInternship = posts[posts.length - 1]?.link ?? '/posts/internship/'
 
 export default defineConfig({
   srcDir: 'src',
@@ -16,7 +43,14 @@ export default defineConfig({
       { text: 'Home', link: '/' },
       { text: 'About', link: '/about' },
       { text: 'Projects', link: '/projects/' },
-      { text: 'Blog', link: '/posts/' },
+      {
+        text: 'Blog',
+        activeMatch: '/posts/',
+        items: [
+          { text: 'Notes', link: '/posts/notes/' },
+          { text: 'Internship', link: latestInternship }
+        ]
+      },
       { text: 'Honors', link: '/honors/' },
       { text: 'Papers', link: '/papers/' }
     ],
@@ -26,6 +60,18 @@ export default defineConfig({
     ],
 
     outline: { level: [2, 3] },
+
+    sidebar: {
+      '/posts/internship/': [
+        {
+          text: '实习记录',
+          items: posts.map(({ text, link, date, brief }) => ({
+            text: date ? `${date} ${brief || text}` : text,
+            link
+          }))
+        }
+      ]
+    },
 
     footer: {
       message: 'Built with VitePress & GitHub Pages',
