@@ -2,6 +2,7 @@ import { createContentLoader } from 'vitepress'
 
 function columnOf(url: string) {
   if (url.startsWith('/posts/notes/') && url !== '/posts/notes/') return 'notes'
+  if (url.startsWith('/posts/paper-reading/') && url !== '/posts/paper-reading/') return 'paper-reading'
   if (url.startsWith('/posts/internship/') && url !== '/posts/internship/') return 'internship'
   return ''
 }

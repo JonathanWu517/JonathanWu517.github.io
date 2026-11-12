@@ -48,6 +48,7 @@ export default defineConfig({
         activeMatch: '/posts/',
         items: [
           { text: 'Notes', link: '/posts/notes/' },
+          { text: '论文精读', link: '/posts/paper-reading/' },
           { text: 'Internship', link: latestInternship }
         ]
       },

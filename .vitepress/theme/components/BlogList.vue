@@ -3,7 +3,7 @@ import { computed } from 'vue'
 import { data as postsRaw } from '../posts.data'
 
 const props = defineProps<{
-  category: 'notes' | 'internship'
+  category: 'notes' | 'internship' | 'paper-reading'
 }>()
 
 interface Post {
@@ -26,9 +26,11 @@ const posts = computed<Post[]>(() => {
     }))
 })
 
-const emptyText = computed(() =>
-  props.category === 'internship' ? 'No internship notes yet.' : 'No notes yet.'
-)
+const emptyMessages = {
+  notes: 'No notes yet.',
+  internship: 'No internship notes yet.',
+  'paper-reading': '暂无论文精读文章。'
+}
 </script>
 
 <template>
@@ -47,7 +49,7 @@ const emptyText = computed(() =>
     </div>
 
     <p v-if="posts.length === 0" class="post-empty">
-      {{ emptyText }}
+      {{ emptyMessages[category] }}
     </p>
   </div>
 </template>
