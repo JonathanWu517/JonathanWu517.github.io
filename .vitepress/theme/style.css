@@ -102,11 +102,56 @@ body {
 .VPNav {
   border-bottom: 1px solid var(--vp-c-divider);
   background: rgba(245, 246, 250, 0.78) !important;
-  backdrop-filter: blur(12px);
   transition: background 0.3s, border-color 0.3s;
 }
 .dark .VPNav {
   background: rgba(26, 29, 42, 0.78) !important;
+}
+
+@media (min-width: 768px) {
+  .VPNav {
+    backdrop-filter: blur(12px);
+  }
+}
+
+@media (width < 768px) {
+  /* Keep the fixed menu relative to the viewport on mobile Safari. */
+  .VPNav {
+    position: sticky;
+    background: var(--vp-nav-bg-color) !important;
+  }
+
+  .dark .VPNav {
+    background: var(--vp-nav-bg-color) !important;
+  }
+
+  .VPNavBar .VPNavBarHamburger {
+    width: 48px;
+    touch-action: manipulation;
+  }
+
+  #VPNavScreen {
+    padding: 0 16px;
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
+    overscroll-behavior-y: contain;
+  }
+
+  #VPNavScreen > .container {
+    max-width: 420px;
+    padding: 12px 0 calc(24px + env(safe-area-inset-bottom));
+  }
+
+  .VPNavScreenMenuLink,
+  .VPNavScreenMenuGroup .button {
+    font-size: 16px;
+  }
+
+  .VPNavScreenMenuGroup .VPNavScreenMenuGroupLink {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+  }
 }
 
 .VPNavBarTitle .title {
