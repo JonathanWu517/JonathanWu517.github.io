@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1000" viewBox="0 0 1080 1000" role="img" aria-labelledby="title desc">
+<title id="title">SuperMimic 官方代码的训练与部署流程</title>
+<desc id="desc">从动作库和仿真配置初始化，采集并存入缓冲区，再分别进行动力学监督学习与想象策略优化；最后部署 actor。世界模型和 critic 仅用于训练。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#31587f"/></marker></defs>
+<rect width="1080" height="1000" fill="#f6f8fc"/>
+<g font-family="Microsoft YaHei, sans-serif" fill="#173457">
+<text x="45" y="45" font-size="25" font-weight="700">当前公开代码：一轮训练中，数据和梯度分别走哪里</text>
+<text x="45" y="75" font-size="16">作者仓库 698ea39 · 本文重绘；实线为数据流，橙色为反向梯度</text>
+<rect x="45" y="105" width="990" height="84" rx="10" fill="#e5edf8" stroke="#9bb3d0"/>
+<text x="65" y="137" font-size="20" font-weight="700">初始化：train.py → SuperMimicRunner</text>
+<text x="65" y="166" font-size="17">输入：重定向 motion.npz + G1 仿真/随机化配置 + 网络与训练参数</text>
+<path d="M540 189 V220" stroke="#31587f" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="45" y="225" width="990" height="110" rx="10" fill="white" stroke="#9bb3d0"/>
+<text x="65" y="257" font-size="20" font-weight="700">① Runner.step：actor → 真正的 MuJoCo 环境 → replay buffer</text>
+<text x="65" y="286" font-size="17">actor 输入：history + goal_motion；输出：每个关节的 raw action</text>
+<text x="65" y="313" font-size="17">存储：state / action / prev_action / motion_time / sim_ctx / episode flags（可选 actor_obs）</text>
+<path d="M300 335 V375" stroke="#31587f" stroke-width="3" marker-end="url(#arrow)"/>
+<path d="M785 335 V375" stroke="#31587f" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="45" y="380" width="490" height="247" rx="10" fill="#eaf3ec" stroke="#7aab89"/>
+<text x="65" y="414" font-size="20" font-weight="700">② WorldModelLearner.update</text>
+<text x="65" y="449" font-size="17">取连续 L 帧日志；动作由日志给定</text>
+<text x="65" y="482" font-size="17">首状态 → Dynamics → 预测状态继续递推</text>
+<text x="65" y="515" font-size="17">下一真实状态作为监督，计算加权 state loss</text>
+<text x="65" y="548" font-size="17">默认 L=8 帧 → 7 次有监督转移</text>
+<text x="65" y="585" font-size="18" font-weight="700">更新 ω；不由 actor 决定窗口内动作</text>
+<rect x="565" y="380" width="470" height="247" rx="10" fill="#e9effb" stroke="#8ca8d6"/>
+<text x="585" y="414" font-size="20" font-weight="700">③ PolicyLearner.update</text>
+<text x="585" y="449" font-size="17">取真实起点及历史；固定 dynamics 权重</text>
+<text x="585" y="482" font-size="17">actor 出动作 → WorldModelEnv.step</text>
+<text x="585" y="515" font-size="17">返回：next_obs / reward / term_prob</text>
+<text x="585" y="548" font-size="17">展开 32 步 + γ³² × survival × V(s₃₂)</text>
+<text x="585" y="585" font-size="18" font-weight="700">BPTT 更新 θ；固定模型也保留输入导数</text>
+<path d="M540 500 H557" stroke="#31587f" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="552" y="652" font-size="16" text-anchor="middle">② 用日志动作拟合模型；③ 用当前 actor 的新动作优化控制</text>
+<rect x="565" y="678" width="470" height="106" rx="10" fill="#fff3e6" stroke="#d4a26a"/>
+<text x="585" y="714" font-size="20" font-weight="700">④ 用 detach 的想象轨迹拟合 critic</text>
+<text x="585" y="748" font-size="17">反向 GAE → 固定 targets → 价值 MSE 更新 ψ</text>
+<path d="M800 627 V671" stroke="#31587f" stroke-width="3" marker-end="url(#arrow)"/>
+<path d="M1016 550 V489 H1004" fill="none" stroke="#c3732e" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="65" y="704" font-size="18" font-weight="700">回到 ①：新策略重新收集仿真数据</text>
+<text x="65" y="739" font-size="17">模型、策略、critic 交替改进</text>
+<text x="65" y="769" font-size="17">并非“先训完模型，再永远固定”</text>
+<rect x="45" y="827" width="990" height="123" rx="10" fill="#173457"/>
+<text x="65" y="863" font-size="21" fill="white" font-weight="700">部署：只运行选定 encoder + shared decoder + normalization</text>
+<text x="65" y="899" font-size="18" fill="white">本体历史 + 参考目标（或已训练的任务命令）→ 29 维动作 → action scale/offset → PD</text>
+<text x="65" y="929" font-size="17" fill="#d4e5fa">不在每个控制步执行世界模型训练、32 步搜索或 critic 更新</text>
+</g></svg>
