@@ -14,6 +14,12 @@ Qiayuan Liao、Yiyang Shao、Junfeng Long、Kevin Zakka、Roberto Horowitz、Pie
 
 [论文 v2](https://arxiv.org/abs/2610.28480v2) · [作者项目页](https://supermimic.github.io/) · [固定版本官方代码](https://github.com/HybridRobotics/supermimic/tree/698ea39bc901d8fe733b3c8621df3199d241f7e4)
 
+**论文 PDF：** [在线阅读英文原文](/paper-reading/supermimic/SuperMimic-arXiv-2610.28480v2.pdf) · <a href="/paper-reading/supermimic/SuperMimic-arXiv-2610.28480v2.pdf" download>下载英文原文</a>
+
+**中文译本：** [在线阅读中文 PDF](/paper-reading/supermimic/SuperMimic-zh-CN.pdf) · <a href="/paper-reading/supermimic/SuperMimic-zh-CN.pdf" download>下载中文译本</a>
+
+*中文译本由用户提供，排版为 16 页；英文原文为 19 页。本笔记的原文页码均对应英文 PDF。*
+
 **阅读导航：[算法全貌](#design) · [MDP/POMDP](#mdp) · [输入输出](#io) · [奖励与终止](#reward) · [训练循环](#training) · [如何改变 PPO](#rl) · [代码差异](#code) · [真机部署](#deployment)**
 
 **先回答最容易误解的问题：SuperMimic 没有把强化学习替换掉。它仍是基于模型的强化学习（model-based RL），仍然训练策略去最大化长期奖励。它主要改变的是：用什么环境产生策略学习轨迹，以及怎样计算策略改进的梯度。** 原先在刚体仿真器里大量采样、用 PPO 估计策略梯度；现在学习一个可微动力学替身，在其中生成短轨迹，并用 BPTT 直接对想象回报求导。
@@ -603,6 +609,7 @@ summary { cursor: pointer; font-weight: 600; }
 代码版本固定698ea39；入口、runner、buffer、representations、models、WMEnv、WM learner、policy learner、exporter 已静态追踪；未安装或执行训练依赖。
 数值：71/68/35/33/640/670/771/962 为条件明确的维数计算；rho=0.4；q'=0.40525；两步目标J=-0.89，动作偏导2.6/1.0；软存活算例5.41936。
 重要解释修正：SuperMimic仍是RL；MDP状态不等于actor观测；有限历史不保证充分；模型梯度不是物理精确梯度；GAE用于critic不等于PPO actor；窗口8帧与8转移不同；代码默认与论文区别单列。
-图2保留原图归属；code-workflow为原创源码流程重绘；本次仅发布解释性摘图，不复制原论文全文或作者代码仓库。
+图2保留原图归属；code-workflow为原创源码流程重绘；未复制作者代码仓库。按用户明确要求另行发布其提供的中英文PDF，保持文件原字节。
+英文PDF：19页，SHA256 66252d821553af508cd3e6c10d4e326fa0595f39a2a7d8f854eafd2a8fbab2a8；中文译本：16页，SHA256 79bd49a3607ff7458db655e77353cf392b49a5930a0b5db4b85e5c03898ece63；笔记页码以英文为准。
 交付核验：生产构建通过；浏览器检查19个MathML公式、2张配图、章节锚点和栏目入口；折叠问答通过鼠标/键盘检查；无脚本正文可读；手机宽度390px无页面横向溢出，宽表在表内横向滚动。此为界面与作者/AI核查，不是实验复现或独立读者评测。
 -->
